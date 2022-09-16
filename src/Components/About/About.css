@@ -1,0 +1,57 @@
+body{
+    /* height: 50vh; */
+}
+.about{
+margin-top: 10vh;
+ display: grid;
+ grid-template-columns: 50% 30%;
+ grid-gap: 5rem;
+ transform: translate(-50%);
+ width: min-content;
+ position: relative;
+ left: 50%;
+}
+
+.welcome{
+
+}
+
+.welcome-title{
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-note{
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-button button{
+    border: 1px solid black;
+    padding: 10px;
+    background-color: rgb(68, 68, 202);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.welcome-button :hover{
+    background-color: rgb(54, 155, 192);
+    transition: 2s;
+}
+
+.welcome-img{
+    /* border: 2px solid black; */
+    /* width: fit-content; */
+}
+.welcome-img img{
+   position: relative;
+
+}
+
+.image-back{
+    /* border: 2px solid black; */
+    height: 15rem;
+    position: absolute;
+    right: -19.5rem;
+    top: -2.7rem;
+    width: 15rem;
+    background-color: rgb(102, 82, 120);
+}

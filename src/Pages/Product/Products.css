@@ -1,0 +1,9 @@
+.all-products{
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px  ;
+    grid-gap: 5rem;
+    transform: translate(-50%);
+    width: min-content;
+    position: relative;
+    left: 50%;
+}
