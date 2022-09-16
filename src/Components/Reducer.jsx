@@ -14,17 +14,50 @@ export const reducer = (state, action) =>{
         }
     }
 
-    if(action.type === 'INCREMENT'){
-        let incrementCart = state.item.map(currEle =>{
+    if(action.type === 'INCREMENT') {
+        let updateCart = state.item.map(curElem => {
+            if(curElem.id === action.payload){
+                return{
+                    ...curElem, quantity: curElem.quantity + 1
+                }
+                
+            }
+            return curElem
+        
+        })
+        return{...state, item: updateCart}
+    }
+
+    if(action.type === 'DECREMENT'){
+        let updateCart = state.item.map(currEle =>{
             if(currEle.id === action.payload){
                 return{
-                    ...currEle, quantity : state.quantity + 1
+                    ...currEle, quantity: currEle.quantity - 1
                 }
             }
             return currEle
+        }).filter(currEle =>{
+            return currEle.quantity !== 0
         })
 
-        return{...state, incrementCart}
+        return{ ...state,item: updateCart}
     }
-    return state
+
+    if(action.type === 'CART_ITEM'){
+        let {totalItem, totalAmount} = state.item.reduce((accum, curVal) =>{
+            let {quantity, price} = curVal
+            accum.totalItem += quantity
+            let updatedTotalAmount = price * quantity;
+            accum.totalAmount += updatedTotalAmount;
+            return accum
+        },
+        {
+            totalItem:0,
+            totalAmount:0
+        }
+        )
+        return{...state, totalItem, totalAmount}
+    }
+
+        return state
 }

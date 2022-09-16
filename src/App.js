@@ -8,7 +8,7 @@ import Cart from "./Pages/Cart/Cart";
 import HomePage from "./Pages/HomePage/HomePage";
 import { reducer } from "./Components/Reducer";
 import { product } from "./Components/Data";
-import { AddLocationAltSharp } from "@mui/icons-material";
+
 
 export const productContaxt = createContext();
 
@@ -31,11 +31,9 @@ const App = () => {
     titalItem: 0
   })
   
-  useEffect(() => {
-    apidata()
-  })
   
-  const apidata =  () =>{
+  
+  // const apidata =  () =>{
    axios.get("https://fakestoreapi.com/products/").then((response) => {
       var temp = response.data.map(curr => {
         var d = { 
@@ -52,7 +50,7 @@ const App = () => {
       console.log(temp, 'data');
       setProductes(temp);
    });
-  }
+  // }
   
 
   
@@ -72,15 +70,34 @@ const App = () => {
     })
   }
 
+  const increment = (id) =>{
+    return dispatch({
+      type: 'INCREMENT',
+      payload: id
+    })
+  }
+
+  const decrement = (id) =>{
+    return dispatch({
+      type: 'DECREMENT',
+      payload: id
+    })
+  }
+
+  useEffect(()=>{
+    return dispatch({
+      type: 'CART_ITEM'
+    })
+  },[state.item])
   
 
   return (
     <>
-      <productContaxt.Provider value={{...state,products, handleOnClick, removeItem, clearCart}}>
+      <productContaxt.Provider value={{...state,products, handleOnClick, removeItem, clearCart, increment, decrement}}>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<Product />} />
+          <Route path="/products" element={<Product/>} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
       </productContaxt.Provider>

@@ -32,7 +32,7 @@ const ShowCart = ({ items }) => {
           
         </div>
         <div className="price">
-          <h3>&#x20b9; {price}</h3>
+          <h3>&#x20b9; {quantity * price}</h3>
         </div>
         <div className="remove-item">
           <i

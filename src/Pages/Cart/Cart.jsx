@@ -5,7 +5,7 @@ import { Scrollbars } from "react-custom-scrollbars-2";
 import ShowCart from "./ShowCart";
 
 const Cart = () => {
-  const {item, clearCart } = useContext(productContaxt);
+  const {item, clearCart, totalItem , totalAmount} = useContext(productContaxt);
   
   console.log(item, 'cartjs');
   return (
@@ -13,7 +13,7 @@ const Cart = () => {
       <section className="main-cart-section">
         <h1>shopping Cart</h1>
         <p className="total-items">
-          you have <span className="total-item-count">0</span> in your shopping
+          you have <span className="total-item-count">{totalItem}</span> in your shopping
           list
         </p>
         <div className="cart-items">
@@ -31,7 +31,7 @@ const Cart = () => {
 
         <div className="card-total">
           <h3>
-            Cart Total : <span>&#x20b9; 2000</span>
+            Cart Total : <span>&#x20b9; {totalAmount}</span>
           </h3>
           <button> CHECKOUT</button>
           <br />

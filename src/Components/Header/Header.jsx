@@ -1,9 +1,11 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./Header.css";
 import { BsCart2 } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
+import { productContaxt } from "../../App";
 
 const Header = () => {
+  const {totalItem} = useContext(productContaxt)
   const navigate = useNavigate();
   return (
     <>
@@ -22,7 +24,7 @@ const Header = () => {
           <div className="cart">
             <Link to="/cart">
               <BsCart2 />
-              <p>0</p>
+              <p>{totalItem}</p>
             </Link>
           </div>
         </div>
