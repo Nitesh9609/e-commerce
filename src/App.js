@@ -6,8 +6,11 @@ import { Routes, Route } from "react-router-dom";
 import Product from "./Pages/Product/Product";
 import Cart from "./Pages/Cart/Cart";
 import HomePage from "./Pages/HomePage/HomePage";
-import { reducer } from "./Components/Reducer";
-import { product } from "./Components/Data";
+import MenCloth from "./Pages/Categories-Pages/MenCloth/MenCloth";
+import WomenCloth from "./Pages/Categories-Pages/WomenCloth/WomenCloth";
+import Electronics from "./Pages/Categories-Pages/Electronics/Electronics";
+import Jewelery from "./Pages/Categories-Pages/Jewelery/Jewelery";
+
 
 
 export const productContaxt = createContext();
@@ -16,91 +19,22 @@ export const productContaxt = createContext();
 
 const App = () => {
  
-  const [products, setProductes] = useState([]);
-  
-  
-  const handleOnClick = (items) =>{
-    state.item = [...state.item, items]
-    console.log(state.item);
-}
 
-  const [state, dispatch]= useReducer(reducer, {
-    item:[],
-    quantity:0,
-    totalAmount: 0,
-    titalItem: 0
-  })
-  
-  
-  
-  // const apidata =  () =>{
-   axios.get("https://fakestoreapi.com/products/").then((response) => {
-      var temp = response.data.map(curr => {
-        var d = { 
-          id: curr.id,
-      title: curr.title,
-      price: curr.price,
-      description: curr.description,
-      category: curr.category,
-      image: curr.image,
-      quantity: 1
-        }
-        return d
-      })
-      console.log(temp, 'data');
-      setProductes(temp);
-   });
-  // }
-  
-
-  
-  
-  /////////////  REMOVE ITEM /////////////
-
-  const removeItem = (id) =>{
-    return dispatch ({
-      type: 'REMOVE-ITEM',
-      payload: id
-    })
-  }
-
-  const clearCart = () =>{
-    return dispatch ({
-      type: 'CLEAR-CART'
-    })
-  }
-
-  const increment = (id) =>{
-    return dispatch({
-      type: 'INCREMENT',
-      payload: id
-    })
-  }
-
-  const decrement = (id) =>{
-    return dispatch({
-      type: 'DECREMENT',
-      payload: id
-    })
-  }
-
-  useEffect(()=>{
-    return dispatch({
-      type: 'CART_ITEM'
-    })
-  },[state.item])
   
 
   return (
     <>
-      <productContaxt.Provider value={{...state,products, handleOnClick, removeItem, clearCart, increment, decrement}}>
         <Header />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<Product/>} />
+          <Route path="/products" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/Men's-Clothing" element={<MenCloth/>} />
+          <Route path="/Women's-Clothing" element={<WomenCloth/>} />
+          <Route path="/Electronics" element={<Electronics/>} />
+          <Route path="/Jewelery" element={<Jewelery/>} />
         </Routes>
-      </productContaxt.Provider>
+      
     </>
   );
 };

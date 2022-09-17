@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import "./Cart.css";
-import { productContaxt } from "../../App";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import ShowCart from "./ShowCart";
+import { cartContext } from "../../Context";
 
 const Cart = () => {
-  const {item, clearCart, totalItem , totalAmount} = useContext(productContaxt);
+  const {item,clearCart, totalItem , totalAmount} = useContext(cartContext);
   
-  console.log(item, 'cartjs');
+  // console.log(item, 'cartjs');
   return (
     <>
       <section className="main-cart-section">

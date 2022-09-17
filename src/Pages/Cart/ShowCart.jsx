@@ -1,10 +1,10 @@
 import React, { useContext,useEffect} from "react";
-import { productContaxt } from "../../App";
+import { cartContext } from "../../Context";
 import "./ShowCart.css";
 
 
 const ShowCart = ({ items }) => {
-  const { removeItem, increment, decrement } = useContext(productContaxt);
+  const { removeItem, increment, decrement } = useContext(cartContext);
   const { title, id, image, price, quantity } = items
   
   

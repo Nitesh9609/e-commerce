@@ -1,0 +1,41 @@
+.categoty{
+    margin-top: 10vh;
+    
+}
+
+.category-title{
+    text-align: center;
+}
+
+.all-category-div {
+    text-align: center;
+    border: 1px solid black;
+    
+}
+
+/* .all-category-div:hover{
+    background-color: rgb(94, 90, 90);
+    transition: 2s;
+} */
+
+.all-category{
+    
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-gap: 10px;
+    width: min-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.all-category img {
+    margin-top: 2vh;
+    width: 50%;
+}
+
+.all-category h4{
+    position: relative;
+    bottom: initial;
+    margin-top: 5vh;
+}

@@ -1,9 +1,9 @@
 import React,{useContext} from 'react'
 import ShowProducts from './ShowProducts';
 import './Products.css'
-import { productContaxt } from '../../App';
-const Product = () => {
-  const {products, handleOnClick} = useContext(productContaxt)
+import { cartContext } from '../../Context';
+const Product = ({citem}) => {
+  const  {products,handleOnClick} = useContext(cartContext)
   
   return (
     <>

@@ -3,9 +3,10 @@ import "./Header.css";
 import { BsCart2 } from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { productContaxt } from "../../App";
+import { cartContext } from "../../Context";
 
 const Header = () => {
-  const {totalItem} = useContext(productContaxt)
+  const {totalItem} = useContext(cartContext)
   const navigate = useNavigate();
   return (
     <>

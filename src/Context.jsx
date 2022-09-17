@@ -1,42 +1,91 @@
-// import React,{useState,useContext, createContext} from 'react'
+import React,{createContext, useState, useReducer, useEffect} from 'react'
 import axios from 'axios';
-import ShowProducts from './ShowProducts';
-import './Products.css'
-import Cart from '../Cart/Cart';
-import { productContaxt } from '../../App';
-// import { productContaxt } from '../../Context';
+import { reducer } from './Components/Reducer';
+import { products } from './Components/Data';
 
-// export const productContaxt = createContext()
+export const cartContext = createContext()
 
-const Product = () => {
-  const products = useContext(productContaxt)
-  // const [products, setProductes] = useState([])
-  const [cartItem, setCartItem] = useState([])
+const Context = ({children}) => {
+  const [products, setProductes] = useState([]);
+  
+  
+  // console.log(cart);
 
-  //  axios.get('https://fakestoreapi.com/products/')
-  // .then((response) => {
-  //   setProductes(response.data);
-  // })
-  const handleOnClick = (item) =>{
-    setCartItem([...cartItem, item]);
+  const handleOnClick = (items) =>{
+    state.item = [...state.item, items]
+    console.log(state.item)
+    
   }
-  // // console.log(cartItem); 
-  // console.log(cartItem);
+  
+ let initialState = {
+    item:[],
+    quantity:0,
+    totalAmount: 0,
+    titalItem: 0
+  }
+
+  const [state, dispatch]= useReducer(reducer, initialState)
+  
+  axios.get("https://fakestoreapi.com/products/").then((response) => {
+    var temp = response.data.map(curr => {
+      var d = { 
+        id: curr.id,
+    title: curr.title,
+    price: curr.price,
+    description: curr.description,
+    category: curr.category,
+    image: curr.image,
+    quantity: 1
+      }
+      return d
+    })
+    // console.log(temp, 'data');
+    setProductes(temp);
+ });
+
+
+ /////////////  REMOVE ITEM /////////////
+
+ const removeItem = (id) =>{
+  return dispatch ({
+    type: 'REMOVE-ITEM',
+    payload: id
+  })
+}
+
+const clearCart = () =>{
+  return dispatch ({
+    type: 'CLEAR-CART'
+  })
+}
+
+const increment = (id) =>{
+  return dispatch({
+    type: 'INCREMENT',
+    payload: id
+  })
+}
+
+const decrement = (id) =>{
+  return dispatch({
+    type: 'DECREMENT',
+    payload: id
+  })
+}
+
+useEffect(()=>{
+  return dispatch({
+    type: 'CART_ITEM'
+  })
+},[state.item])
+
+
+
   return (
-    <>
-      {/* <productContaxt.Provider value={{products, cartItem}}> */}
-        <div className='all-products'>
-          {
-            products.map(product =>{
-            return <ShowProducts items={product} />
-            })
-          }
-          
-        </div>
-        {/* <Cart/> */}
-      {/* </productContaxt.Provider> */}
-    </>
+    <cartContext.Provider value={{...state,products, handleOnClick, removeItem, clearCart, increment, decrement}}>
+      {children}
+    </cartContext.Provider>
   )
 }
 
-export default Product
+export default Context
