@@ -12,6 +12,17 @@
 
 }
 
+.product-image img:hover{
+    transform: scale(1.5);
+    transition: 2s;
+}
+
+
+.product-image{
+    display: flex;
+    flex-direction: column;
+}
+
 .product-content{
     display: grid;
     grid-template-rows:min-content;

@@ -1,6 +1,7 @@
 import React from "react";
 import './SingleProduct.css'
 import ReactStars from "react-rating-stars-component";
+import './SingleElementShow.css'
 const SingleElementShow = ({ data, handleOnClick }) => {
   const { title, image, price, description, rating } = data;
   const ratingChanged = (rating) =>{
