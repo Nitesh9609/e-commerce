@@ -1,0 +1,23 @@
+.single-product{
+    display: grid;
+    grid-template-columns: 40vw 40vw;
+    grid-gap: 20px;
+    margin-top: 10vh;
+}
+
+.product-image img{
+    width: 40%;
+    position: relative;
+    left: 50%;
+
+}
+
+.product-content{
+    display: grid;
+    grid-template-rows:min-content;
+}
+
+/* .product-content button{
+    width: 20%;
+    height: 30%;
+} */

@@ -1,10 +1,10 @@
 import React,{useContext,useState} from 'react'
-import { productContaxt } from './Product'
+import { useNavigate } from 'react-router-dom'
 import './ShowProducts.css'
 
 const ShowProducts = ({items,handleOnClick}) => {
-    // const products = useContext(productContaxt)
-    const {title,image,price,id,quantity} = items
+  const navigate = useNavigate()
+  const {title,image,price,id,quantity} = items
     
   return (
     <>
@@ -13,7 +13,7 @@ const ShowProducts = ({items,handleOnClick}) => {
           <div className='products'>
             <div>
             <h3>{title}</h3>
-            <img src={image} alt="" />
+            <img src={image} alt="" onClick={() => navigate(`products/${title}`)}/>
             <p>&#x20b9; {price}</p>
             
             <div className="welcome-button">
