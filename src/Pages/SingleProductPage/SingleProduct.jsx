@@ -6,6 +6,7 @@ import SingleElementShow from './SingleElementShow'
 const SingleProduct = () => {
     const params = useParams()
     const {products, handleOnClick} = useContext(cartContext)
+
     const singleProduct = products.filter((ele) => { return ele.title === `${params.title}`})
 // console.log(singleProduct);
   return (

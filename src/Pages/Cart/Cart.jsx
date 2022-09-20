@@ -5,9 +5,9 @@ import ShowCart from "./ShowCart";
 import { cartContext } from "../../Context";
 
 const Cart = () => {
-  const {item,clearCart, totalItem , totalAmount} = useContext(cartContext);
+  const {item, clearCart, totalItem , totalAmount} = useContext(cartContext);
   
-  // console.log(item, 'cartjs');
+  console.log(item, 'cartjs');
   return (
     <>
       <section className="main-cart-section">

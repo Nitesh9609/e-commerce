@@ -1,4 +1,20 @@
+import { useContext, useState } from "react"
+
+
+
 export const reducer = (state, action) =>{
+
+   
+
+    if(action.type === 'CART-HANDLER'){
+        return{
+            ...state,
+            item: [...state.item, action.payload] 
+    }
+            
+        
+    }
+
     if(action.type === 'REMOVE-ITEM'){
         return{
             ...state,
