@@ -12,7 +12,7 @@ const ShowCart = ({ items }) => {
     <>
 
     
-      <div className="items-info">
+       <div className="items-info">
         <div className="product-img">
           <img src={image} alt="product" />
         </div>
@@ -40,9 +40,12 @@ const ShowCart = ({ items }) => {
             onClick={() => removeItem(id)}
           ></i>
         </div>
-      </div>
+      </div> 
       
-      <hr />
+      {/* <div className="cartShow-card">
+        <div></div>
+        <div></div>
+      </div> */}
       
     </>
   );

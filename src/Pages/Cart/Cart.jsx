@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "./Cart.css";
+import "./ShowCart.css";
 import { Scrollbars } from "react-custom-scrollbars-2";
 import ShowCart from "./ShowCart";
 import { cartContext } from "../../Context";
@@ -8,37 +8,104 @@ const Cart = () => {
   const {item, clearCart, totalItem , totalAmount} = useContext(cartContext);
   
   console.log(item, 'cartjs');
-  return (
-    <>
-      <section className="main-cart-section">
-        <h1>shopping Cart</h1>
-        <p className="total-items">
-          you have <span className="total-item-count">{totalItem}</span> in your shopping
-          list
-        </p>
-        <div className="cart-items">
-          <div className="cart-items-container">
-            <Scrollbars>
+  if(totalItem === 0){
+    return(
+      <div className="cart-section">
+
+
+      <div className="cart-items">
+        <div className="cart-count">
+          <h3>CART IS EMPTY PLEASE SHOP SOMETHING</h3>
+          
+        </div>
+        <div className="cart-content">
+        <Scrollbars>
               {item.map((curr) => {
                 return <ShowCart items={curr} />;
                 
               })}
 
 
-            </Scrollbars>
-          </div>
+          </Scrollbars>
+        </div>
+      </div>
+
+
+      <div className="place-order">
+        <p1>PRICE DETAILS ({totalItem} items)</p1>
+        <div className="mrp">
+          <p2>Total MRP</p2>
+          <p3>&#8377; {totalAmount}</p3>
+        </div>
+        <div className="delivery-charge">
+          <p4>Delivery Charge</p4>
+          <p5>FREE</p5>
+        </div>
+        <ul/>
+        <div className="total-amount">
+          <h3>Total Amount</h3>
+          <h3>&#8377; {totalAmount}</h3>
         </div>
 
-        <div className="card-total">
-          <h3>
-            Cart Total : <span>&#x20b9; {totalAmount}</span>
-          </h3>
-          <button> CHECKOUT</button>
-          <br />
-          <button onClick={clearCart}>CLEAR CART</button>
+        <div className="cart-buttons">
+          <button >PLACE ORDER</button>
+          <button  onClick={clearCart}>CLEAR CART</button>
         </div>
-      </section>
-    </>
+      </div>
+      
+    </div>
+    )
+
+    
+  }
+  return (
+    
+
+
+    <div className="cart-section">
+
+
+      <div className="cart-items">
+        <div className="cart-count">
+          <h3>My Cart ({totalItem} items)</h3>
+          <h3>Total: Rs.{totalAmount}</h3>
+        </div>
+        <div className="cart-content">
+        <Scrollbars>
+              {item.map((curr) => {
+                return <ShowCart items={curr} />;
+                
+              })}
+
+
+          </Scrollbars>
+        </div>
+      </div>
+
+
+      <div className="place-order">
+        <p1>PRICE DETAILS ({totalItem} items)</p1>
+        <div className="mrp">
+          <p2>Total MRP</p2>
+          <p3>&#8377; {totalAmount}</p3>
+        </div>
+        <div className="delivery-charge">
+          <p4>Delivery Charge</p4>
+          <p5>FREE</p5>
+        </div>
+        <ul/>
+        <div className="total-amount">
+          <h3>Total Amount</h3>
+          <h3>&#8377; {totalAmount}</h3>
+        </div>
+
+        <div className="cart-buttons">
+          <button >PLACE ORDER</button>
+          <button  onClick={clearCart}>CLEAR CART</button>
+        </div>
+      </div>
+      
+    </div>
   );
 };
 
