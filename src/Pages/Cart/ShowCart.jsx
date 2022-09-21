@@ -5,7 +5,7 @@ import "./ShowCart.css";
 
 const ShowCart = ({ items }) => {
   const { removeItem, increment, decrement } = useContext(cartContext);
-  const { title, id, image, price, quantity } = items
+  const { name, id, image, price, quantity } = items
   
   
   return (
@@ -17,7 +17,7 @@ const ShowCart = ({ items }) => {
           <img src={image} alt="product" />
         </div>
         <div className="title">
-          <h2>{title}</h2>
+          <h2>{name}</h2>
         </div>
         <div className="add-minus-quantity">
           <i
