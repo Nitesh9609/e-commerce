@@ -10,10 +10,11 @@ const Header = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="nav-bar">
-        <div className="nav-name">
-          <span className="first-name">NITESH</span>
-          <span className="last-name">STORE</span>
+      <div className="nav-bar" >
+        <div className="nav-name" >
+        <Link to="/"><span className="first-name">NITESH</span>
+          <span className="last-name">STORE</span></Link>
+          
         </div>
 
         <div className="nav-links">

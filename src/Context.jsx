@@ -1,29 +1,12 @@
 import React, { createContext, useState, useReducer, useEffect } from "react";
 import axios from "axios";
 import { reducer } from "./Components/Reducer";
-import { products } from "./Components/Data";
+import { products } from "./Components/Data2";
 
 export const cartContext = createContext();
 
 const Context = ({ children }) => {
-  // const [products, setProductes] = useState([]);
-  
-  
-  
-
-  // const handleOnClick = (items) => {
-  //   return dispatch({
-  //     type: 'CART-HANDLER',
-  //     payload: items
-  //   })
-  //   // state.item = [...state.item, items];
-  //   // console.log(state.item)
-  //   setCart([...cart, items]);
-  //   // console.log(cart);
-  // };
-
-  
-
+  // const [products, setProductes] = useState([])
   const [state, dispatch] = useReducer(reducer, {
     item: [],
     quantity: 0,
@@ -34,35 +17,36 @@ const Context = ({ children }) => {
   const [cart, setCart] = useState(state.item);
   console.log(state.item);
 
-
   const handleOnClick = (items) => {
     return dispatch({
-      type: 'CART-HANDLER',
-      payload: items
-    })
-    // state.item = [...state.item, items];
-    // console.log(state.item)
-    setCart([...cart, items]);
-    // console.log(cart);
+      type: "CART-HANDLER",
+      payload: items,
+    });
   };
 
-  //   axios.get("https://fakestoreapi.com/products/").then((response) => {
-  //     var temp = response.data.map(curr => {
-  //       var d = {
-  //         id: curr.id,
-  //     title: curr.title,
-  //     price: curr.price,
-  //     description: curr.description,
-  //     category: curr.category,
-  //     image: curr.image,
-  //     rating: curr.rating.rate,
-  //     quantity: 1
-  //       }
-  //       return d
-  //     })
-  //     // console.log(temp, 'data');
-  //     setProductes(temp);
-  //  });
+ //////////////// AXIOS SECTION ///////////////////
+// useEffect(() => {
+//  axios.get("https://ecommerce-backend.prithvibytes.repl.co/products/mens").then((response) => {
+//     var temp = response.data.products.map(curr => {
+//       var d = { 
+//     id: curr.id,
+//     name: curr.name,
+//     type: curr.type,
+//     brand: curr.brand,
+//     price: curr.price,
+//     description: curr.description,
+//     category: curr.category,
+//     image: curr.image,
+//     discount: curr.discount,
+//     quantity: 1
+//       }
+//       return d
+//     })
+//     console.log(temp, 'data');
+//     setProductes(temp);
+//  });
+// }, [])
+  
 
   /////////////  REMOVE ITEM /////////////
 

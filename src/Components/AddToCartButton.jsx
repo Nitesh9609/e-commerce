@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
-
+import './AddToCartButton.css'
 const AddToCartButton = (props) => {
   const [addCart, setAddCart] = useState(false);
   return (
-    <div className="welcome-button">
+    <div className="addToCartButton" >
     
-        <button onClick={props.onClick}>{props.value}</button>
+        <button  onClick={props.onClick}>{props.value}</button>
   
     </div>
   );

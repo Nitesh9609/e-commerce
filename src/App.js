@@ -20,8 +20,8 @@ const App = () => {
         <Route path="/products" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/category/:category" element={<PerticularCategory />} />
-        <Route path="/category/:category/product/:title" element={<SingleProduct/>}/>
-        <Route path='/products/products/:title' element={<SingleProduct/>}/>
+        <Route path="/category/:category/product/:name" element={<SingleProduct/>}/>
+        <Route path='/products/product/:name' element={<SingleProduct/>}/>
       </Routes>
     </>
   );

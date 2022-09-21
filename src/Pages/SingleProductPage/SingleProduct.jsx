@@ -7,7 +7,7 @@ const SingleProduct = () => {
     const params = useParams()
     const {products, handleOnClick} = useContext(cartContext)
 
-    const singleProduct = products.filter((ele) => { return ele.title === `${params.title}`})
+    const singleProduct = products.filter((ele) => { return ele.name === `${params.name}`})
 // console.log(singleProduct);
   return (
     <>

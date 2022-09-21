@@ -1,0 +1,35 @@
+.addToCartButton button {
+    position: relative;
+    bottom: 10%;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    letter-spacing: 1;
+    text-transform: uppercase;
+    padding: 10px 15px;
+    border: none;
+    border: 2px solid black;
+    color: black;
+    background-color: #fff;
+    border-radius: 3px;
+    transition: all 0.3s;
+
+}
+
+.addToCartButton {
+text-align: center;   
+ position: relative;
+    top: 64%;
+    opacity: 0;
+    z-index: 700;
+    transition: all 0.3s;
+}
+
+
+
+.addToCartButton button:hover {
+    background: rgb(0, 0, 0);
+    color: #fff;
+    border: 2px solid black;
+}

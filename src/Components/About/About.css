@@ -4,7 +4,7 @@ body{
 .about{
 margin-top: 10vh;
  display: grid;
- grid-template-columns: 50% 30%;
+ grid-template-columns: 300px 600px;
  grid-gap: 5rem;
  transform: translate(-50%);
  width: min-content;
@@ -37,14 +37,10 @@ margin-top: 10vh;
     transition: 2s;
 }
 
-.welcome-img{
-    /* border: 2px solid black; */
-    /* width: fit-content; */
-}
 .welcome-img img{
-   position: relative;
-
+    width: 100%;
 }
+
 
 .image-back{
     /* border: 2px solid black; */

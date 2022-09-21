@@ -25,9 +25,9 @@ const About = () => {
             
           </div>
         </div>
-        <div className="image-back"/>
+        {/* <div className="image-back"/> */}
         <div className="welcome-img">
-            <img src="assets/welcome-image.jpg" alt="img" />
+            <img src="assets/welcome-image2.jpg" alt="img" />
         </div>
         
 

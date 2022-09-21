@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const SingleElementShow = ({ data }) => {
-  const { title, image, price, description } = data;
+  const { name, image, price, description } = data;
   const { item, handleOnClick } = useContext(cartContext);
 const navigate = useNavigate()
 
@@ -32,7 +32,7 @@ const navigate = useNavigate()
       </div>
       {/* <p>{rating}</p> */}
       <div className="product-content">
-        <h2>{title}</h2>
+        <h2>{name}</h2>
         
         <p2>{description}</p2>
         <p1>&#x20b9; {price}</p1>

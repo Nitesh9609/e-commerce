@@ -4,33 +4,41 @@ import AddToCartButton from "../../Components/AddToCartButton";
 import { cartContext } from "../../Context";
 
 const PerticularCategoryShow = ({ items}) => {
-  const { title, image, price, category, id } = items;
+  const { name, image, price,discount, category, id } = items;
   const { item, handleOnClick } = useContext(cartContext)
   const navigate = useNavigate()
   return (
-    <div>
-      <div className="products">
-        <div>
-          <h3>{title}</h3>
-          <img src={image} alt="" onClick={() => navigate(`product/${title}`)}/>
-          <p>&#x20b9; {price}</p>
-
-          <div className="welcome-button">
-          {item.includes(items) ? (
-            <AddToCartButton
-              value="Go To Cart"
-              onClick={() => navigate("/cart")}
-            />
-          ) : (
-            <AddToCartButton
-              onClick={() => handleOnClick(items)}
-              value="Add To Cart"
-            />
-          )}
+    
+    <>
+    <div className="products">
+        {item.includes(items) ? (
+          <AddToCartButton
+            className="addToCartButton"
+            value="Go To Cart"
+            onClick={() => navigate("/cart")}
+          />
+        ) : (
+          <AddToCartButton
+            onClick={() => handleOnClick(items)}
+            value="Add To Cart"
+          />
+        )}
+        <div className="product-container">
+          <img
+            className="product-img"
+            src={image}
+            alt=""
+            onClick={() => navigate(`product/${name}`)}
+          />
+        </div>
+        <div className="product-title">
+          <h3>{name}</h3>
+          <div>
+          <p>&#x20b9;{price} <span>-({discount}% off)</span></p>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
