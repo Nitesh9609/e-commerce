@@ -12,11 +12,17 @@
     margin-top:1vh;
 }
 
-.nav-name{
-    margin-left: 1vw;
-    height: min-content;
-    font-weight: bold;
-   border: 1px solid white;
+.nav-name {
+    position: relative;
+    top: -3vh;
+    
+    margin-top: -1vh;
+    width: 5%;
+    
+}
+
+.nav-name img{
+    width: 150%;
 }
 
 .first-name{

@@ -12,8 +12,7 @@ const Header = () => {
     <>
       <div className="nav-bar" >
         <div className="nav-name" >
-        <Link to="/"><span className="first-name">NITESH</span>
-          <span className="last-name">STORE</span></Link>
+        <Link to="/"><img src="/assets/NSLogo.png" alt="" /></Link>
           
         </div>
 

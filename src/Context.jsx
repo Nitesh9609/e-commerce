@@ -7,15 +7,20 @@ export const cartContext = createContext();
 
 const Context = ({ children }) => {
   // const [products, setProductes] = useState([])
+
+  // ****** FILTER STATE **********//
+
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("");
+  const [company, setCompany] = useState("none");
+  const [priceValue, setPriceValue] = useState(0);
+
   const [state, dispatch] = useReducer(reducer, {
     item: [],
     quantity: 0,
     totalAmount: 0,
     titalItem: 0,
   });
-
-  const [cart, setCart] = useState(state.item);
-  console.log(state.item);
 
   const handleOnClick = (items) => {
     return dispatch({
@@ -24,29 +29,28 @@ const Context = ({ children }) => {
     });
   };
 
- //////////////// AXIOS SECTION ///////////////////
-// useEffect(() => {
-//  axios.get("https://ecommerce-backend.prithvibytes.repl.co/products/mens").then((response) => {
-//     var temp = response.data.products.map(curr => {
-//       var d = { 
-//     id: curr.id,
-//     name: curr.name,
-//     type: curr.type,
-//     brand: curr.brand,
-//     price: curr.price,
-//     description: curr.description,
-//     category: curr.category,
-//     image: curr.image,
-//     discount: curr.discount,
-//     quantity: 1
-//       }
-//       return d
-//     })
-//     console.log(temp, 'data');
-//     setProductes(temp);
-//  });
-// }, [])
-  
+  //////////////// AXIOS SECTION ///////////////////
+  // useEffect(() => {
+  //  axios.get("https://ecommerce-backend.prithvibytes.repl.co/products/mens").then((response) => {
+  //     var temp = response.data.products.map(curr => {
+  //       var d = {
+  //     id: curr.id,
+  //     name: curr.name,
+  //     type: curr.type,
+  //     brand: curr.brand,
+  //     price: curr.price,
+  //     description: curr.description,
+  //     category: curr.category,
+  //     image: curr.image,
+  //     discount: curr.discount,
+  //     quantity: 1
+  //       }
+  //       return d
+  //     })
+  //     console.log(temp, 'data');
+  //     setProductes(temp);
+  //  });
+  // }, [])
 
   /////////////  REMOVE ITEM /////////////
 
@@ -83,6 +87,28 @@ const Context = ({ children }) => {
     });
   }, [state.item]);
 
+  // *********************** FILTERS ************************//
+
+  const searchHandler = (event) => {
+    setSearch(event.target.value);
+    // console.log(event.target.value);
+  };
+
+  const categoryHandler = (event) => {
+    setCategory(event.target.innerText);
+    // console.log(event.target.innerText);
+  };
+
+  const companyHandler = (event) => {
+    setCompany(event.target.value);
+    // console.log(event.target.value);
+  };
+
+  const priceHandler = (e, value) => {
+    setPriceValue(value);
+    // console.log(value);
+  };
+
   return (
     <cartContext.Provider
       value={{
@@ -93,7 +119,11 @@ const Context = ({ children }) => {
         clearCart,
         increment,
         decrement,
-        cart,
+        searchHandler,
+        categoryHandler,
+        companyHandler,
+        priceHandler,
+        search,company,priceValue,category
       }}
     >
       {children}

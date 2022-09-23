@@ -82,3 +82,62 @@ ul{
 
 
 /* **************** Show Cart **************** */
+
+
+.cartShow-card{
+    margin: 1vw;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    /* width: 90%; */
+}
+
+.cart-item-image{
+    width: 30%;
+}
+
+
+.cart-item-image img{
+    width: 50%;
+    margin: 1vw;
+}
+
+.cart-item-details{
+    width: 50%;
+}
+
+.cart-item-details h3 {
+    width: 30%;
+}
+
+.increment-dec-quantity{
+    margin-top: 5.5vh;
+    text-align: center;
+}
+
+.increment-dec-quantity input{
+    width: 10%;
+    border: white;
+}
+
+.increment-dec-quantity i{
+    margin: 0.5vw;
+}
+
+.increment-dec-quantity i:hover{
+    color: orange;
+}
+
+.price{
+    margin-top: 3.5vh;
+    width: 20%;
+}
+
+.remove-item{
+    margin-top: 5.5vh;
+    width: 10%;
+}
+
+.remove-item i:hover{
+    color: orange;
+}

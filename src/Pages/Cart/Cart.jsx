@@ -6,8 +6,8 @@ import { cartContext } from "../../Context";
 
 const Cart = () => {
   const {item, clearCart, totalItem , totalAmount} = useContext(cartContext);
-  
   console.log(item, 'cartjs');
+  
   if(totalItem === 0){
     return(
       <div className="cart-section">
