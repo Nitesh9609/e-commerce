@@ -20,8 +20,7 @@ const Header = () => {
           <Link to="/">HOME</Link>
           <a href="#">ABOUT</a>
           <Link to="/products">PRODUCT</Link>
-
-          <a href="#">CONTACT</a>
+          <Link to="/contact">CONTACT</Link>
           <div className="cart">
             <Link to="/cart">
               <BsCart2 />

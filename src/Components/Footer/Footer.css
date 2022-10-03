@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,200&display=swap');
+
+.footer{
+    background-color: rgb(6, 6, 75);
+    margin-top: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+.footer-1{
+    display: grid;
+    grid-template-columns: 300px 300px 300px 300px;
+    gap: 30px;
+    width: min-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    
+   
+}
+
+.footer-1 div{
+    margin: 2rem;
+}
+
+.subscribe input{
+    padding: 0.8rem;
+}
+
+.subscribe input[type=text]{
+    font-size: 0.9rem;
+}
+
+.subscribe button{
+    margin-top: 0.6rem;
+    padding: 0.5rem;
+    background-color: rgb(7, 7, 206);
+    color: white;
+    
+}
+
+.follow i{
+    font-size: 2rem;
+    margin: 0.2rem;
+}
+
+.footer-2{
+    text-align: center;
+    padding-bottom: 0.5rem;
+}

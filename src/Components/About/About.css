@@ -25,16 +25,18 @@ margin-top: 10vh;
 }
 
 .welcome-button button{
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px;
-    background-color: rgb(68, 68, 202);
-    color: white;
+    background-color: white;
+    color:black;
     font-family: 'Poppins', sans-serif;
+    font-size: bold;
 }
 
 .welcome-button :hover{
-    background-color: rgb(54, 155, 192);
-    transition: 2s;
+    background-color: black;
+    color: white;
+   
 }
 
 .welcome-img img{

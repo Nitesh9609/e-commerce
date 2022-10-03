@@ -21,7 +21,7 @@ const About = () => {
             </p>
           </div>
           <div className="welcome-button">
-            <button onClick={() => navigate('./products')}>Shop Now</button>
+            <button onClick={() => navigate('./products')}>SHOP NOW</button>
             
           </div>
         </div>

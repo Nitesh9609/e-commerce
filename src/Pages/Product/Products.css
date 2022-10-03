@@ -8,10 +8,13 @@
     position: relative;
     left: 50%;
     /* border: 1px solid black;  */
+    margin-bottom: 10rem;
 }
 
 .filter{
     position: absolute;
+    top: 10vh;
+    left: 1vw;
     width: 20%;
     height: 200%;
 }

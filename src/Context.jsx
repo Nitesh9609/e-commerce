@@ -9,11 +9,8 @@ const Context = ({ children }) => {
   // const [products, setProductes] = useState([])
 
   // ****** FILTER STATE **********//
-
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
-  const [company, setCompany] = useState("none");
-  const [priceValue, setPriceValue] = useState(0);
+  const [filter, setFilter] = useState([])
+  
 
   const [state, dispatch] = useReducer(reducer, {
     item: [],
@@ -89,24 +86,24 @@ const Context = ({ children }) => {
 
   // *********************** FILTERS ************************//
 
-  const searchHandler = (event) => {
-    setSearch(event.target.value);
-    // console.log(event.target.value);
+  const searchHandler = (name) => {
+    const searchFilter = products.filter((searchFil) =>  searchFil.name.toLowerCase().includes(name))
+    setFilter(searchFilter)
   };
 
-  const categoryHandler = (event) => {
-    setCategory(event.target.innerText);
-    // console.log(event.target.innerText);
+  const categoryHandler = (data) => {
+    const categotyFilter = products.filter((searchFil) => searchFil.category === data)
+    setFilter(categotyFilter)
   };
 
-  const companyHandler = (event) => {
-    setCompany(event.target.value);
-    // console.log(event.target.value);
+  const companyHandler = (data) => {
+    const companyFilter = products.filter((searchFil) =>  searchFil.brand === data)
+    setFilter(companyFilter)
   };
 
-  const priceHandler = (e, value) => {
-    setPriceValue(value);
-    // console.log(value);
+  const priceHandler = (data) => {
+    const priceFilter = products.filter((searchFil) => searchFil.price <= data)
+    setFilter(priceFilter)
   };
 
   return (
@@ -123,7 +120,9 @@ const Context = ({ children }) => {
         categoryHandler,
         companyHandler,
         priceHandler,
-        search,company,priceValue,category
+        // search,company,priceValue,category,
+        
+        filter
       }}
     >
       {children}

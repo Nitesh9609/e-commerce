@@ -1,0 +1,23 @@
+.filter-class{
+    /* text-align: center; */
+}
+
+.filter-name{
+    margin-top: -40px;
+    text-align: center;
+    font-size:30px;
+}
+
+.search-input{
+    margin-top: 20px;
+    height: 3vh;
+    width: max-content;
+}
+
+.search-input[type=text]{
+    font-size: large;
+}
+
+.brands{
+    
+}

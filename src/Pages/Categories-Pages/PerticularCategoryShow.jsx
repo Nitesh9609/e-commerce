@@ -4,7 +4,7 @@ import AddToCartButton from "../../Components/AddToCartButton";
 import { cartContext } from "../../Context";
 
 const PerticularCategoryShow = ({ items}) => {
-  const { name, image, price,discount, category, id } = items;
+  const { name, brand,image, price,discount, category, id } = items;
   const { item, handleOnClick } = useContext(cartContext)
   const navigate = useNavigate()
   return (
@@ -32,7 +32,8 @@ const PerticularCategoryShow = ({ items}) => {
           />
         </div>
         <div className="product-title">
-          <h3>{name}</h3>
+          <h3>{brand}</h3>
+          <p1>{name}</p1>
           <div>
           <p>&#x20b9;{price} <span>-({discount}% off)</span></p>
           </div>

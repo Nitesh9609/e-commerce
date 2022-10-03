@@ -18,7 +18,8 @@ const Cart = () => {
           <h3>CART IS EMPTY PLEASE SHOP SOMETHING</h3>
           
         </div>
-        <div className="cart-content">
+        <div className="cart-c
+        ontent">
         <Scrollbars>
               {item.map((curr) => {
                 return <ShowCart items={curr} />;
@@ -58,6 +59,55 @@ const Cart = () => {
 
     
   }
+
+
+  const loadScript = (src) =>{
+    return new Promise((resolve)=>{
+      const script = document.createElement('script')
+      script.src = src
+
+      script.onload = () =>{
+        resolve(true)
+      }
+
+      script.onerror = () =>{
+        resolve(false)
+      }
+
+      document.body.appendChild(script)
+    })
+  }
+
+  const dispalyRazarpay = async(totalAmount) =>{
+      const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js')
+
+      if(!res) {
+        alert('you are offline....')
+        return
+      }
+
+      const options = {
+        key: 'rzp_test_q4eCdtbRPhS0so',
+        currency:'INR',
+        amount: totalAmount * 100,
+        description: 'Nitesh Cart',
+
+        handler: function (response){
+          alert(response.razorpay.razorpay_payment_id)
+          alert('payment successfully')
+        },
+
+        prefill: {
+          name:'Nitesh Cart'
+        }
+
+      }
+
+      const paymentObject = new window.Razorpay(options)
+      paymentObject.open()
+  }
+
+
   return (
     
 
@@ -100,7 +150,7 @@ const Cart = () => {
         </div>
 
         <div className="cart-buttons">
-          <button >PLACE ORDER</button>
+          <button onClick={() => dispalyRazarpay(totalAmount)}>PLACE ORDER</button>
           <button  onClick={clearCart}>CLEAR CART</button>
         </div>
       </div>

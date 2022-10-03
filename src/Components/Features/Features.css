@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+.features{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+}
+
+.features div{
+    margin: 10px;
+    /* border: 1px solid black ; */
+    border-radius: 1rem;
+    padding: 20px;
+    position: relative;
+    left: 50%;
+    text-align: center;
+    font-family: 'Roboto Slab', serif;
+    background: rgb(244, 244, 247);
+}
+
+.features i{
+    font-size: 30px;
+    color: blue;
+}
+.delivery{
+    grid-column: 1;
+    grid-row: 1 / 4;
+    text-align: center;
+}
+
+.delivery i {
+    position: relative;
+    top: 35%;
+    
+}
+
+.delivery h4 {
+    position: relative;
+    top: 35%;
+}
+
+.money{
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.payment{
+    grid-row: 1 / 4;
+}
+
+.payment i {
+    position: relative;
+    top: 35%;
+    
+}
+
+.payment h4 {
+    position: relative;
+    top: 35%;
+}
