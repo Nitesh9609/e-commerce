@@ -47,3 +47,41 @@
     text-align: center;
     padding-bottom: 0.5rem;
 }
+
+/* ================== MEDIA QUERY (MEDIUM DEVICE) ===================== */
+
+@media screen and (max-width: 1024px){
+    .footer{
+        font-size: 15px;
+    }
+    .footer-1{
+        display: grid;
+        grid-template-columns: 250px 250px 250px 250px;
+        gap: 10px;
+        width: min-content;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        
+       
+    }
+}
+
+/* ================== MEDIA QUERY (SMALL DEVICE) ===================== */
+
+@media screen and (max-width: 604px){
+    .footer{
+        font-size: 15px;
+    }
+    .footer-1{
+        display: grid;
+        grid-template-columns: 250px 250px 250px 250px;
+        gap: 10px;
+        width: min-content;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        
+       
+    }
+}

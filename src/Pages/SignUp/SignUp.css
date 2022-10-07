@@ -1,0 +1,50 @@
+.signup-box {
+    text-align: center;
+    margin-top: 5rem;
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    padding: 30px;
+    width: min-content;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    height: min-content;
+    border: 1px solid black;
+    margin-bottom: 12vw;
+    justify-content: center;
+}
+
+.headind-signup{
+    
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+.name-field{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 10px;
+    grid-row: 2;
+}
+
+.phone-field{
+    grid-row: 5;
+}
+
+.email-field{
+    grid-row: 4;
+}
+
+.password-field{
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 10px;
+    grid-row: 3;
+}
+
+.button-field{
+    grid-row: 6;
+}
+

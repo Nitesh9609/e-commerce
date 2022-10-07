@@ -1,50 +1,49 @@
-body{
+body {
     /* height: 50vh; */
 }
-.about{
-margin-top: 10vh;
- display: grid;
- grid-template-columns: 300px 600px;
- grid-gap: 5rem;
- transform: translate(-50%);
- width: min-content;
- position: relative;
- left: 50%;
+
+.about {
+    margin-top: 10vh;
+    display: grid;
+    grid-template-columns: 300px 600px;
+    grid-gap: 5rem;
+    transform: translate(-50%);
+    width: min-content;
+    position: relative;
+    left: 50%;
 }
 
-.welcome{
+.welcome {}
 
-}
-
-.welcome-title{
+.welcome-title {
     font-family: 'Poppins', sans-serif;
 }
 
-.welcome-note{
+.welcome-note {
     font-family: 'Poppins', sans-serif;
 }
 
-.welcome-button button{
+.welcome-button button {
     border: 2px solid black;
     padding: 10px;
     background-color: white;
-    color:black;
+    color: black;
     font-family: 'Poppins', sans-serif;
     font-size: bold;
 }
 
-.welcome-button :hover{
+.welcome-button :hover {
     background-color: black;
     color: white;
-   
+
 }
 
-.welcome-img img{
+.welcome-img img {
     width: 100%;
 }
 
 
-.image-back{
+.image-back {
     /* border: 2px solid black; */
     height: 15rem;
     position: absolute;
@@ -52,4 +51,25 @@ margin-top: 10vh;
     top: -2.7rem;
     width: 15rem;
     background-color: rgb(102, 82, 120);
+}
+
+
+
+/* ================== MEDIA QUERY (MEDIUM DEVICE) ===================== */
+
+@media screen and (max-width: 1024px) {}
+
+/* ================== MEDIA QUERY (SMALL DEVICE) ===================== */
+
+@media screen and (max-width: 604px) {
+    .about {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        transform: none;
+        position: relative;
+        left: 0;
+
+    }
 }

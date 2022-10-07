@@ -10,12 +10,16 @@ import PerticularCategory from "./Pages/Categories-Pages/PerticularCategory";
 import SingleProduct from "./Pages/SingleProductPage/SingleProduct";
 import Contact from "./Pages/Contact/Contact";
 import Footer from "./Components/Footer/Footer";
+import Note from "./Components/Note/Note";
+import Login from "./Pages/LoginPages/Login";
+import SignUp from "./Pages/SignUp/SignUp";
 
 export const productContaxt = createContext();
 
 const App = () => {
   return (
     <>
+      
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -25,8 +29,11 @@ const App = () => {
         <Route path="/category/:category" element={<PerticularCategory />} />
         <Route path="/category/:category/product/:name" element={<SingleProduct/>}/>
         <Route path='/products/product/:name' element={<SingleProduct/>}/>
+        <Route path='/login' element={<Login/>}/>
+        <Route path='/signUp' element={<SignUp/>}/>
       </Routes>
       <Footer/>
+      
     </>
   );
 };

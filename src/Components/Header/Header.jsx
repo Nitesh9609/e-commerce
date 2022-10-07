@@ -21,6 +21,10 @@ const Header = () => {
           <a href="#">ABOUT</a>
           <Link to="/products">PRODUCT</Link>
           <Link to="/contact">CONTACT</Link>
+          <Link to='/login'><button>LogIn</button> </Link>
+          
+         
+          
           <div className="cart">
             <Link to="/cart">
               <BsCart2 />
