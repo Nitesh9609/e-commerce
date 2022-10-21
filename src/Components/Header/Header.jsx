@@ -8,6 +8,13 @@ import { cartContext } from "../../Context";
 const Header = () => {
   const {totalItem} = useContext(cartContext)
   const navigate = useNavigate();
+  const auth = localStorage.getItem('user')
+  const handleOnLogOut = () => {
+    localStorage.clear()
+  }
+
+  const userDetails = JSON.parse(localStorage.getItem('user'))
+  console.log(userDetails);
   return (
     <>
       <div className="nav-bar" >
@@ -21,7 +28,13 @@ const Header = () => {
           <a href="#">ABOUT</a>
           <Link to="/products">PRODUCT</Link>
           <Link to="/contact">CONTACT</Link>
-          <Link to='/login'><button>LogIn</button> </Link>
+          <Link> Welcome {userDetails}!!</Link>
+          {
+            auth ? <Link to='/'><button onClick={handleOnLogOut}>LogOut</button></Link> : <Link to='/login'><button>LogIn</button></Link>
+          }
+          
+          
+
           
          
           
