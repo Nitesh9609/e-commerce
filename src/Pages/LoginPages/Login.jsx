@@ -19,7 +19,8 @@ const Login = () => {
   }
 
   const handleOnClick= async () => {
-    await axios.post('http://localhost:8080/app/user/user/signin', input)
+    // await axios.post('http://localhost:8080/app/user/user/signin'https://e-commerce-backend-one.vercel.app/app/user/user/signup, input)
+    await axios.post("https://e-commerce-backend-one.vercel.app/app/user/user/signin", input)
     .then((res)=> {
     if(res.data){
       localStorage.setItem('user', JSON.stringify(res.data.userDetail.firstName))

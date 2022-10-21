@@ -14,7 +14,9 @@ const SignUp = () => {
   }
 
   const handleOnClick = async () =>{
-      await axios.post('http://localhost:8080/app/user/user/signup',input)
+      // await axios.post('http://localhost:8080/app/user/user/signup',input)
+            await axios.post('https://e-commerce-backend-one.vercel.app/app/user/user/signup',input)
+
       .then((res) => alert(res.data))
       .catch((err) => alert(err))
   }
