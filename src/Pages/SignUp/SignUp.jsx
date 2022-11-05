@@ -4,6 +4,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
+
 const SignUp = () => {
 
   const [input, setInput] = useState({})
@@ -19,7 +20,10 @@ const SignUp = () => {
 
       .then((res) => alert(res.data))
       .catch((err) => alert(err))
+
   }
+
+  
 
   return (
     <div className="signup-box">
@@ -80,7 +84,7 @@ const SignUp = () => {
           label="Password"
           variant="outlined"
           name='password'
-          type="password"
+          // type="password"
           onChange={handleOnChange}
           required
         />
@@ -88,11 +92,11 @@ const SignUp = () => {
           sx={{ width: "200px", margin: 1 }}
           id="outlined-basic"
           label="Confirm Password"
-          name='confirm password'
+          name='confirmPassword'
           variant="outlined"
-          type="password"
+          // type="password"
           onChange={handleOnChange}
-          // required
+          required
         />
       </div>
       <div className="button-field">
